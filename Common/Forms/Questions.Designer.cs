@@ -131,7 +131,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(204, 265);
+            button1.Location = new Point(204, 271);
             button1.Name = "button1";
             button1.Size = new Size(162, 26);
             button1.TabIndex = 8;
@@ -152,7 +152,7 @@
             // 
             // Questions
             // 
-            ClientSize = new Size(570, 305);
+            ClientSize = new Size(570, 321);
             Controls.Add(checkBox1);
             Controls.Add(checkBox2);
             Controls.Add(checkBox3);

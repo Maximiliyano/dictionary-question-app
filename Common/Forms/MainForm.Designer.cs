@@ -60,7 +60,6 @@
             comboBox1.BackColor = Color.White;
             comboBox1.ForeColor = SystemColors.WindowText;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Theme 1", "Theme 2", "Theme 3", "Theme 4" });
             comboBox1.Location = new Point(111, 101);
             comboBox1.Margin = new Padding(4, 3, 4, 3);
             comboBox1.Name = "comboBox1";
@@ -80,6 +79,7 @@
             Margin = new Padding(4, 3, 4, 3);
             Name = "MainForm";
             Text = "Form1";
+            Load += MainForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -88,6 +88,6 @@
 
         private Label label1;
         private Button button1;
-        private ComboBox comboBox1;
+        public ComboBox comboBox1;
     }
 }

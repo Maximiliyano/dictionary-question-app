@@ -1,8 +1,14 @@
-﻿namespace DictionaryQuestionApp
+﻿using DictionaryQuestionApp.Common.Libraries;
+
+namespace DictionaryQuestionApp
 {
     public partial class Questions : Form
     {
         private int _result = 0;
+
+        private List<int> _selectedQuestionsIndex = new List<int>();
+
+        public int SelectedIndexTheme { get; set; }
 
         public Questions()
         {
@@ -80,22 +86,44 @@
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (_result <= 0)
+            {
+                MessageBox.Show("No question selected!");
+                return;
+            }
+
             this.Hide();
 
             var answers = new Answers();
+
+            foreach (Control control in Controls)
+            {
+                if (control is CheckBox && ((CheckBox)control).Checked)
+                {
+                    answers.SelectedControlQuestions.Add((CheckBox)control);
+                }
+            }
 
             answers.Show();
         }
 
         private void Questions_Load(object sender, EventArgs e)
         {
-            var firstThemeQuestions = Library.ThemeSelectionQuestions(0);
+            var themeQuestions = QuestionsLibrary.ThemeSelectionQuestions(SelectedIndexTheme);
 
-            CheckBox[] checkboxes = { checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox7 };
+            CheckBox[] checkboxes = {
+                checkBox1,
+                checkBox2,
+                checkBox3,
+                checkBox4,
+                checkBox5,
+                checkBox6,
+                checkBox7
+            };
 
             for (int i = 0; i < checkboxes.Length; i++)
             {
-                checkboxes[i].Text = firstThemeQuestions[i];
+                checkboxes[i].Text = themeQuestions[i];
             }
         }
     }
