@@ -16,12 +16,31 @@ public class AnswersLibrary
             { 7, SevenQuestionAnswers() }
         };
 
-        return string.Format(AnswerStringFormat, 
-            dictionaryAnswers[questionIndex][0],
-            dictionaryAnswers[questionIndex][1],
-            dictionaryAnswers[questionIndex][2],
-            dictionaryAnswers[questionIndex][3],
-            dictionaryAnswers[questionIndex][4]);
+        var answersList = dictionaryAnswers[questionIndex];
+
+        Shuffle(answersList);
+
+        return string.Format(AnswerStringFormat,
+            answersList[0],
+            answersList[1],
+            answersList[2],
+            answersList[3],
+            answersList[4]);
+    }
+
+    static void Shuffle<T>(List<T> list)
+    {
+        Random random = new Random();
+        int n = list.Count;
+
+        while (n > 1)
+        {
+            n--;
+            int k = random.Next(n + 1);
+            T value = list[k];
+            list[k] = list[n];
+            list[n] = value;
+        }
     }
 
     private static List<string> FirstQuestionAnswers()
