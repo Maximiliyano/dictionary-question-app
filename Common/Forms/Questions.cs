@@ -1,131 +1,127 @@
-﻿using DictionaryQuestionApp.Common.Forms;
-using DictionaryQuestionApp.Common.Libraries;
+﻿using DictionaryQuestionApp.Common.Libraries;
 
-namespace DictionaryQuestionApp
+namespace DictionaryQuestionApp.Common.Forms;
+
+public partial class Questions : Form
 {
-    public partial class Questions : Form
+    private int _result;
+
+    public int SelectedIndexTheme { get; set; }
+
+    public Questions()
     {
-        private int _result = 0;
+        InitializeComponent();
+    }
 
-        private List<int> _selectedQuestionsIndex = new List<int>();
+    private void checkBox1_CheckedChanged(object sender, EventArgs e)
+    {
+        CheckBoxCountCalculation(checkBox1.Checked);
+    }
 
-        public int SelectedIndexTheme { get; set; }
+    private void checkBox2_CheckedChanged(object sender, EventArgs e)
+    {
+        CheckBoxCountCalculation(checkBox2.Checked);
+    }
 
-        public Questions()
+    private void checkBox3_CheckedChanged(object sender, EventArgs e)
+    {
+        CheckBoxCountCalculation(checkBox3.Checked);
+    }
+
+    private void checkBox4_CheckedChanged(object sender, EventArgs e)
+    {
+        CheckBoxCountCalculation(checkBox4.Checked);
+    }
+
+    private void checkBox5_CheckedChanged(object sender, EventArgs e)
+    {
+        CheckBoxCountCalculation(checkBox5.Checked);
+    }
+
+    private void checkBox6_CheckedChanged(object sender, EventArgs e)
+    {
+        CheckBoxCountCalculation(checkBox6.Checked);
+    }
+
+    private void checkBox7_CheckedChanged(object sender, EventArgs e)
+    {
+        CheckBoxCountCalculation(checkBox7.Checked);
+    }
+
+    private void CheckBoxCountCalculation(bool check)
+    {
+        switch (check)
         {
-            InitializeComponent();
-        }
+            case true:
+                _result++;
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            CheckBoxCountCalculation(checkBox1.Checked);
-        }
-
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
-        {
-            CheckBoxCountCalculation(checkBox2.Checked);
-        }
-
-        private void checkBox3_CheckedChanged(object sender, EventArgs e)
-        {
-            CheckBoxCountCalculation(checkBox3.Checked);
-        }
-
-        private void checkBox4_CheckedChanged(object sender, EventArgs e)
-        {
-            CheckBoxCountCalculation(checkBox4.Checked);
-        }
-
-        private void checkBox5_CheckedChanged(object sender, EventArgs e)
-        {
-            CheckBoxCountCalculation(checkBox5.Checked);
-        }
-
-        private void checkBox6_CheckedChanged(object sender, EventArgs e)
-        {
-            CheckBoxCountCalculation(checkBox6.Checked);
-        }
-
-        private void checkBox7_CheckedChanged(object sender, EventArgs e)
-        {
-            CheckBoxCountCalculation(checkBox7.Checked);
-        }
-
-        private void CheckBoxCountCalculation(bool check)
-        {
-            switch (check)
-            {
-                case true:
-                    _result++;
-
-                    if (_result >= 5)
-                    {
-                        foreach (Control control in Controls)
-                        {
-                            if (control is CheckBox && !((CheckBox)control).Checked)
-                            {
-                                control.Enabled = false;
-                            }
-                        }
-                    }
-                    break;
-                default:
-                    _result--;
-
+                if (_result >= 5)
+                {
                     foreach (Control control in Controls)
                     {
-                        if (control is CheckBox)
+                        if (control is CheckBox { Checked: false } checkBox)
                         {
-                            control.Enabled = true;
+                            checkBox.Enabled = false;
                         }
                     }
-                    break;
-            }
-
-            countAnswers.Text = $"{_result}/5";
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (_result <= 0)
-            {
-                MessageBox.Show("No question selected!");
-                return;
-            }
-
-            Hide();
-
-            var answers = new Answers();
-
-            foreach (Control control in Controls)
-            {
-                if (control is CheckBox && ((CheckBox)control).Checked)
-                {
-                    answers.SelectedControlQuestions.Add((CheckBox)control);
                 }
-            }
+                break;
+            default:
+                _result--;
 
-            answers.Show();
+                foreach (Control control in Controls)
+                {
+                    if (control is CheckBox)
+                    {
+                        control.Enabled = true;
+                    }
+                }
+                break;
         }
 
-        private void Questions_Load(object sender, EventArgs e)
+        countAnswers.Text = $@"{_result}/5";
+    }
+
+    private void button1_Click(object sender, EventArgs e)
+    {
+        if (_result <= 0)
         {
-            var themeQuestions = QuestionsLibrary.ThemeSelectionQuestions(SelectedIndexTheme);
+            MessageBox.Show("No question selected!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
+        }
 
-            CheckBox[] checkboxes = {
-                checkBox1,
-                checkBox2,
-                checkBox3,
-                checkBox4,
-                checkBox5,
-                checkBox6,
-                checkBox7
-            };
+        Hide();
 
-            for (int i = 0; i < checkboxes.Length; i++)
+        var answers = new Answers();
+
+        foreach (Control control in Controls)
+        {
+            if (control is CheckBox { Checked: true } checkBox)
             {
-                checkboxes[i].Text = themeQuestions[i];
+                answers.SelectedControlQuestions.Add(checkBox);
             }
+        }
+
+        answers.Show();
+    }
+
+    private void Questions_Load(object sender, EventArgs e)
+    {
+        var themeQuestions = QuestionsLibrary.ThemeSelectionQuestions(SelectedIndexTheme);
+
+        CheckBox[] checkboxes = {
+            checkBox1,
+            checkBox2,
+            checkBox3,
+            checkBox4,
+            checkBox5,
+            checkBox6,
+            checkBox7
+        };
+
+        for (var i = 0; i < checkboxes.Length; i++)
+        {
+            checkboxes[i].Text = themeQuestions[i];
         }
     }
 }

@@ -1,12 +1,13 @@
-namespace DictionaryQuestionApp
+using DictionaryQuestionApp.Common.Forms;
+
+namespace DictionaryQuestionApp;
+
+public static class Program
 {
-    internal static class Program
+    [STAThread]
+    private static void Main()
     {
-        [STAThread]
-        private static void Main()
-        {
-            ApplicationConfiguration.Initialize();
-            Application.Run(new MainForm());
-        }
+        ApplicationConfiguration.Initialize();
+        Application.Run(new MainForm());
     }
 }

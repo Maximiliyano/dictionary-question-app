@@ -1,12 +1,12 @@
 ﻿namespace DictionaryQuestionApp.Common.Libraries;
 
-public class AnswersLibrary
+public abstract class AnswersLibrary
 {
-    public const string AnswerStringFormat = "1. {0}\n2. {1}\n3. {2}\n4. {3}\n5. {4}";
+    private const string AnswerStringFormat = "1. {0}\n2. {1}\n3. {2}\n4. {3}\n5. {4}";
 
     public static string SelectionAnswersToQuestions(int questionIndex)
     {
-        var dictionaryAnswers = new Dictionary<int, List<string>>() { 
+        var dictionaryAnswers = new Dictionary<int, List<string>> { 
             { 1, FirstQuestionAnswers() }, 
             { 2, SecondQuestionAnswers() },
             { 3, ThirdQuestionAnswers() },
@@ -28,24 +28,21 @@ public class AnswersLibrary
             answersList[4]);
     }
 
-    static void Shuffle<T>(List<T> list)
+    private static void Shuffle<T>(IList<T> list)
     {
-        Random random = new Random();
-        int n = list.Count;
+        var random = new Random();
+        var n = list.Count;
 
         while (n > 1)
         {
             n--;
-            int k = random.Next(n + 1);
-            T value = list[k];
-            list[k] = list[n];
-            list[n] = value;
+            var k = random.Next(n + 1);
+            (list[k], list[n]) = (list[n], list[k]);
         }
     }
 
-    private static List<string> FirstQuestionAnswers()
-    {
-        return new()
+    private static List<string> FirstQuestionAnswers() =>
+        new()
         {
             "Answers 1",
             "An1swers 2",
@@ -53,11 +50,9 @@ public class AnswersLibrary
             "Answers 4",
             "Answers 5"
         };
-    }
 
-    private static List<string> SecondQuestionAnswers()
-    {
-        return new()
+    private static List<string> SecondQuestionAnswers() =>
+        new()
         {
             "An2swers 1",
             "Answers 2",
@@ -65,11 +60,9 @@ public class AnswersLibrary
             "Answers 4",
             "Answers 5"
         };
-    }
 
-    private static List<string> ThirdQuestionAnswers()
-    {
-        return new()
+    private static List<string> ThirdQuestionAnswers() =>
+        new()
         {
             "An3swers 1",
             "Answers 2",
@@ -77,11 +70,9 @@ public class AnswersLibrary
             "Answers 4",
             "Answers 5"
         };
-    }
 
-    private static List<string> FourQuestionAnswers()
-    {
-        return new()
+    private static List<string> FourQuestionAnswers() =>
+        new()
         {
             "A4nswers 1",
             "Answers 2",
@@ -89,11 +80,9 @@ public class AnswersLibrary
             "Answers 4",
             "Answers 5"
         };
-    }
 
-    private static List<string> FiveQuestionAnswers()
-    {
-        return new()
+    private static List<string> FiveQuestionAnswers() =>
+        new()
         {
             "A5nswers 1",
             "Answers 2",
@@ -101,11 +90,9 @@ public class AnswersLibrary
             "Answers 4",
             "Answers 5"
         };
-    }
 
-    private static List<string> SixQuestionAnswers()
-    {
-        return new()
+    private static List<string> SixQuestionAnswers() =>
+        new()
         {
             "A6nswers 1",
             "Answers 2",
@@ -113,11 +100,9 @@ public class AnswersLibrary
             "Answers 4",
             "Answers 5"
         };
-    }
 
-    private static List<string> SevenQuestionAnswers()
-    {
-        return new()
+    private static List<string> SevenQuestionAnswers() =>
+        new()
         {
             "A7nswers 1",
             "Answers 2",
@@ -125,5 +110,4 @@ public class AnswersLibrary
             "Answers 4",
             "Answers 5"
         };
-    }
 }

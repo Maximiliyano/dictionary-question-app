@@ -2,5 +2,5 @@
 
 public static class AboutInfo
 {
-    public static string Title = "Some Info";
+    public const string Title = "Some Info";
 }  

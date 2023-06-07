@@ -1,6 +1,6 @@
 ﻿namespace DictionaryQuestionApp.Common.Libraries;
 
-public class QuestionsLibrary
+public abstract class QuestionsLibrary
 {
     public static List<string> ThemeSelectionQuestions(int index)
     {
@@ -18,9 +18,8 @@ public class QuestionsLibrary
         return dictionaryQuestions[index + 1];
     }
 
-    private static List<string> FirstThemeQuestions()
-    {
-        return new()
+    private static List<string> FirstThemeQuestions() =>
+        new()
         {
             "Q1uestion 1",
             "Question 2",
@@ -30,11 +29,9 @@ public class QuestionsLibrary
             "Question 6",
             "Question 7",
         };
-    }
 
-    private static List<string> SecondThemeQuestions()
-    {
-        return new()
+    private static List<string> SecondThemeQuestions() =>
+        new()
         {
             "Q2uestion 1",
             "Question 2",
@@ -44,11 +41,9 @@ public class QuestionsLibrary
             "Question 6",
             "Question 7",
         };
-    }
 
-    private static List<string> ThreeThemeQuestions()
-    {
-        return new()
+    private static List<string> ThreeThemeQuestions() =>
+        new()
         {
             "Q3uestion 1",
             "Question 2",
@@ -58,11 +53,9 @@ public class QuestionsLibrary
             "Question 6",
             "Question 7",
         };
-    }
 
-    private static List<string> FourThemeQuestions()
-    {
-        return new()
+    private static List<string> FourThemeQuestions() =>
+        new()
         {
             "Q4uestion 1",
             "Question 2",
@@ -72,5 +65,4 @@ public class QuestionsLibrary
             "Question 6",
             "Question 7",
         };
-    }
 }

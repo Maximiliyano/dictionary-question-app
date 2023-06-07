@@ -1,6 +1,6 @@
 ﻿namespace DictionaryQuestionApp.Common.Libraries;
 
-public class ThemeLibrary
+public abstract class ThemeLibrary
 {
     public static List<string> SelectionAllTheme() =>
         new()

@@ -1,7 +1,6 @@
-using DictionaryQuestionApp.Common.Forms;
 using DictionaryQuestionApp.Common.Libraries;
 
-namespace DictionaryQuestionApp;
+namespace DictionaryQuestionApp.Common.Forms;
 
 public partial class MainForm : Form
 {
@@ -14,17 +13,15 @@ public partial class MainForm : Form
     {
         if (comboBox1.SelectedIndex < 0)
         {
-            MessageBox.Show("Error, no theme selected");
+            MessageBox.Show("No theme selected!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return;
         }
 
         var nextPageForm = new Questions();
 
-        var selectedIndex = comboBox1.SelectedIndex;
+        nextPageForm.SelectedIndexTheme = comboBox1.SelectedIndex;
 
-        nextPageForm.SelectedIndexTheme = selectedIndex;
-
-        this.Hide();
+        Hide();
 
         nextPageForm.Show();
     }
@@ -36,29 +33,11 @@ public partial class MainForm : Form
         comboBox1.Items.AddRange(stringCollection.Cast<string>().ToArray());
     }
 
-    private void toolStripMenuItem1_Click(object sender, EventArgs e)
-    {
-        var aboutForm = new About();
-
-        this.Hide();
-
-        aboutForm.ShowDialog();
-    }
-
-    private void button2_Click(object sender, EventArgs e)
-    {
-        var aboutForm = new About();
-
-        this.Hide();
-
-        aboutForm.ShowDialog();
-    }
-
     private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
     {
         var aboutForm = new About();
 
-        this.Hide();
+        Hide();
 
         aboutForm.ShowDialog();
     }
