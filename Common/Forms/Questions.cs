@@ -1,4 +1,5 @@
-﻿using DictionaryQuestionApp.Common.Libraries;
+﻿using DictionaryQuestionApp.Common.Forms;
+using DictionaryQuestionApp.Common.Libraries;
 
 namespace DictionaryQuestionApp
 {
@@ -92,7 +93,7 @@ namespace DictionaryQuestionApp
                 return;
             }
 
-            this.Hide();
+            Hide();
 
             var answers = new Answers();
 

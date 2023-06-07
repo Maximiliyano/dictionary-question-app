@@ -1,3 +1,4 @@
+using DictionaryQuestionApp.Common.Forms;
 using DictionaryQuestionApp.Common.Libraries;
 
 namespace DictionaryQuestionApp;
@@ -33,5 +34,32 @@ public partial class MainForm : Form
         var stringCollection = ThemeLibrary.SelectionAllTheme();
 
         comboBox1.Items.AddRange(stringCollection.Cast<string>().ToArray());
+    }
+
+    private void toolStripMenuItem1_Click(object sender, EventArgs e)
+    {
+        var aboutForm = new About();
+
+        this.Hide();
+
+        aboutForm.ShowDialog();
+    }
+
+    private void button2_Click(object sender, EventArgs e)
+    {
+        var aboutForm = new About();
+
+        this.Hide();
+
+        aboutForm.ShowDialog();
+    }
+
+    private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+        var aboutForm = new About();
+
+        this.Hide();
+
+        aboutForm.ShowDialog();
     }
 }

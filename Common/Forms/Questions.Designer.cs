@@ -131,9 +131,9 @@
             // 
             // button1
             // 
-            button1.Location = new Point(204, 271);
+            button1.Location = new Point(228, 271);
             button1.Name = "button1";
-            button1.Size = new Size(162, 26);
+            button1.Size = new Size(114, 26);
             button1.TabIndex = 8;
             button1.Text = "Calculate";
             button1.UseVisualStyleBackColor = true;

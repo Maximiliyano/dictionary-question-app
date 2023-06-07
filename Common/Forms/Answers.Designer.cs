@@ -1,4 +1,4 @@
-﻿namespace DictionaryQuestionApp
+﻿namespace DictionaryQuestionApp.Common.Forms
 {
     partial class Answers
     {
@@ -158,12 +158,13 @@
             // 
             // button1
             // 
-            button1.Location = new Point(149, 666);
+            button1.Location = new Point(113, 715);
             button1.Name = "button1";
-            button1.Size = new Size(96, 43);
+            button1.Size = new Size(132, 23);
             button1.TabIndex = 44;
             button1.Text = "Аналіз відповідей";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // label11
             // 
@@ -205,7 +206,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(371, 737);
+            ClientSize = new Size(371, 767);
             Controls.Add(label14);
             Controls.Add(label13);
             Controls.Add(label12);
