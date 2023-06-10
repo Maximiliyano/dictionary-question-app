@@ -1,6 +1,6 @@
-﻿namespace DictionaryQuestionApp.Common.Forms
+﻿namespace DictionaryQuestionApp.Forms
 {
-    partial class Analysis
+    partial class AnalysisForm
     {
         /// <summary>
         /// Required designer variable.

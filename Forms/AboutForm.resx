@@ -57,7 +57,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="MainForm_button1_Click_Error__no_theme_selected" xml:space="preserve">
-    <value>Error, no theme selected</value>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Дана програма визначає міру розбіжності між ранжуваннями 
+двох експертів. 
+   Для того, щоб розпочати роботу, необхідно обрати тему опитування з 
+випадаючого списку та вказати п’ять питаннь, які Вас зацікавлять. 
+   Особивістю даної програми є те, що вона сама відповідає на 
+поставленні питання, а потім й аналізує відповіді.</value>
   </data>
 </root>

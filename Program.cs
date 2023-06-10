@@ -1,4 +1,4 @@
-using DictionaryQuestionApp.Common.Forms;
+using DictionaryQuestionApp.Forms;
 
 namespace DictionaryQuestionApp;
 
@@ -8,6 +8,6 @@ public static class Program
     private static void Main()
     {
         ApplicationConfiguration.Initialize();
-        Application.Run(new MainForm());
+        Application.Run(new AboutForm());
     }
 }
