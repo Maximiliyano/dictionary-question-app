@@ -28,7 +28,7 @@ partial class AnswerForm
         label10 = new Label();
         label20 = new Label();
         label21 = new Label();
-        button1 = new Button();
+        analysisButton = new Button();
         label11 = new Label();
         label12 = new Label();
         label13 = new Label();
@@ -144,15 +144,15 @@ partial class AnswerForm
         label21.TabIndex = 27;
         label21.Text = "Питання не визначено";
         // 
-        // button1
+        // analysisButton
         // 
-        button1.Location = new Point(247, 699);
-        button1.Name = "button1";
-        button1.Size = new Size(132, 23);
-        button1.TabIndex = 44;
-        button1.Text = "Аналіз відповідей";
-        button1.UseVisualStyleBackColor = true;
-        button1.Click += button1_Click;
+        analysisButton.Location = new Point(247, 693);
+        analysisButton.Name = "analysisButton";
+        analysisButton.Size = new Size(132, 29);
+        analysisButton.TabIndex = 44;
+        analysisButton.Text = "Аналіз відповідей";
+        analysisButton.UseVisualStyleBackColor = true;
+        analysisButton.Click += analysisButton_Click;
         // 
         // label11
         // 
@@ -199,7 +199,7 @@ partial class AnswerForm
         Controls.Add(label13);
         Controls.Add(label12);
         Controls.Add(label11);
-        Controls.Add(button1);
+        Controls.Add(analysisButton);
         Controls.Add(label20);
         Controls.Add(label21);
         Controls.Add(label10);
@@ -233,7 +233,7 @@ partial class AnswerForm
     private Label label10;
     private Label label20;
     private Label label21;
-    private Button button1;
+    private Button analysisButton;
     private Label label11;
     private Label label12;
     private Label label13;

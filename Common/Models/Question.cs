@@ -2,7 +2,7 @@
 
 public class Question
 {
-    public Question(string description, IList<string> answers)
+    public Question(string description, IList<Answer> answers)
     {
         Description = description;
         Answers = answers;
@@ -14,5 +14,5 @@ public class Question
     
     public string Description { get; set; }
 
-    public IList<string> Answers { get; set; }
+    public IList<Answer> Answers { get; set; }
 }

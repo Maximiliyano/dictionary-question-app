@@ -15,26 +15,20 @@ public partial class AnswerForm : Form
 
     private void Answers_Load(object sender, EventArgs e)
     {
-        for (int i = 0; i < Questions.Count; i++)
+        for (var i = 0; i < Questions.Count; i++)
         {
-            Label questionLabel = GetQuestionLabel(i);
-            Label idLabel = GetIdLabel(i);
+            var questionLabel = GetQuestionLabel(i);
+            var idLabel = GetIdLabel(i);
 
-            questionLabel.Text = Questions[i].Description;
-            idLabel.Text = ConvertToString(Questions[i].Id);
+            if (questionLabel != null)
+                questionLabel.Text = Questions[i].Description;
+
+            if (idLabel != null)
+                idLabel.Text = ConvertToString(Questions[i].Id);
         }
     }
 
-    private void button1_Click(object sender, EventArgs e)
-    {
-        Close();
-
-        var analysisForm = new AnalysisForm();
-
-        analysisForm.Show();
-    }
-
-    private Label GetQuestionLabel(int index)
+    private Label? GetQuestionLabel(int index)
     {
         return index switch
         {
@@ -47,7 +41,7 @@ public partial class AnswerForm : Form
         };
     }
 
-    private Label GetIdLabel(int index)
+    private Label? GetIdLabel(int index)
     {
         return index switch
         {
@@ -68,9 +62,66 @@ public partial class AnswerForm : Form
         {
             for (var i = 0; i < question.Answers.Count; i++)
             {
-                str += $"{i + 1}. {question.Answers[i]}\n";
+                str += $"{i + 1}. {question.Answers[i].Description}\n";
             }
         }
         return str;
     }
+
+    private void analysisButton_Click(object sender, EventArgs e)
+    {
+        var values = new List<double>();
+
+        for (int i = 0; i < Questions.Count; i++)
+        {
+            foreach (var ranking in Questions[i].Answers)
+            {
+                values.Add(ranking.Rank);
+            }
+
+            var kemenyMedian = CalculateKemenyMedian(values);
+            var spearmanCorrelation = CalculateSpearmanCorrelation(values);
+
+            var result = $"Коефіцієнт рангової кореляції Спірмена: {spearmanCorrelation}\n" +
+                            $"Медіана Кемені: {kemenyMedian}";
+
+            MessageBox.Show(result, $"Результати аналізу питання: {Questions[i].Id}");
+        }
+    }
+
+    private double CalculateKemenyMedian(List<double> values)
+    {
+        values.Sort();
+
+        int n = values.Count;
+        double median;
+        if (n % 2 == 0)
+        {
+            median = (values[n / 2 - 1] + values[n / 2]) / 2;
+        }
+        else
+        {
+            median = values[n / 2];
+        }
+
+        return median;
+    }
+
+    private double CalculateSpearmanCorrelation(List<double> values)
+    {
+        int n = values.Count;
+
+        List<double> ranks = values.Select((x, i) => new KeyValuePair<double, int>(x, i))
+            .OrderBy(x => x.Key)
+            .Select((x, i) => new KeyValuePair<int, int>(x.Value, i + 1))
+            .OrderBy(x => x.Key)
+            .Select(x => (double)x.Value)
+            .ToList();
+
+        double sumOfSquaredDifferences = values.Select((x, i) => Math.Pow(x - ranks[i], 2)).Sum();
+        double spearmanCorrelation = 1 - (6 * sumOfSquaredDifferences) / (n * (n * n - 1));
+
+        return spearmanCorrelation;
+    }
+
 }

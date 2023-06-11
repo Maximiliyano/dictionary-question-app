@@ -1,8 +1,10 @@
-﻿namespace DictionaryQuestionApp.Common.Libraries;
+﻿using DictionaryQuestionApp.Common.Models;
+
+namespace DictionaryQuestionApp.Common.Libraries;
 
 public abstract class AnswersLibrary
 {
-    public static List<string> SelectionAnswersToQuestions(int themeId, int questionId)
+    public static List<Answer> SelectionAnswersToQuestions(int themeId, int questionId)
     {
         themeId++;
         
@@ -16,24 +18,22 @@ public abstract class AnswersLibrary
             { 7, SevenQuestionAnswers(themeId) }
         };
 
-        var answersList = dictionaryAnswers[questionId];
+        var answersList = dictionaryAnswers[questionId]
+            .OrderBy(answer => answer)
+            .ToList();
 
-        Shuffle(answersList);
+        var listAnswers = new List<Answer>();
 
-        return answersList;
-    }
-
-    private static void Shuffle<T>(IList<T> list)
-    {
-        var random = new Random();
-        var n = list.Count;
-
-        while (n > 1)
+        for (var i = 0; i < answersList.Count; i++)
         {
-            n--;
-            var k = random.Next(n + 1);
-            (list[k], list[n]) = (list[n], list[k]);
+            listAnswers.Add(new Answer 
+            { 
+                Description = answersList[i], 
+                Rank = i + 1
+            });
         }
+
+        return listAnswers;
     }
 
     private static List<string> FirstQuestionAnswers(int themeId) =>
