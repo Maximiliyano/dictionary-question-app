@@ -65,6 +65,8 @@ public partial class QuestionForm : Form
                             checkBox.Enabled = false;
                         }
                     }
+
+                    button1.Enabled = true;
                 }
                 break;
             default:
@@ -85,12 +87,6 @@ public partial class QuestionForm : Form
 
     private void button1_Click(object sender, EventArgs e)
     {
-        if (_result <= 0)
-        {
-            MessageBox.Show("No question selected!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            return;
-        }
-
         Hide();
 
         var answers = new AnswerForm();
@@ -102,18 +98,18 @@ public partial class QuestionForm : Form
                 answers.Questions.Add(new Question
                 {
                     Id = checkBox.TabIndex,
-                    Description = checkBox.Text
+                    Description = checkBox.Text.Remove(0, 3)
                 });
             }
         }
 
         foreach (var question in answers.Questions)
         {
-            var fgd = BlockObjective.Questions.FirstOrDefault(x => x.Description == question.Description);
+            var filledQuestion = BlockObjective.Questions.FirstOrDefault(x => x.Id == question.Id);
 
-            if (fgd is not null)
+            if (filledQuestion is not null)
             {
-                question.Answers = fgd.Answers;
+                question.Answers = filledQuestion.Answers;
             }
         }
 
@@ -122,6 +118,8 @@ public partial class QuestionForm : Form
 
     private void Questions_Load(object sender, EventArgs e)
     {
+        button1.Enabled = false;
+        
         var themeQuestions = QuestionsLibrary.ThemeSelectionQuestions(BlockObjective.Theme.Id);
 
         CheckBox[] checkboxes = {
@@ -136,7 +134,7 @@ public partial class QuestionForm : Form
 
         for (var i = 0; i < checkboxes.Length; i++)
         {
-            checkboxes[i].Text = themeQuestions[i].Description;
+            checkboxes[i].Text = string.Format(QuestionsLibrary.QuestionStringEndpointFormat, i+1, themeQuestions[i].Description);
         }
     }
 }
