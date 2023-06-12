@@ -1,41 +1,46 @@
-﻿namespace DictionaryQuestionApp.Forms
+﻿namespace DictionaryQuestionApp.Forms.AnalysisForm;
+
+public partial class AnalysisForm : Form
 {
-    public partial class AnalysisForm : Form
+    public IList<double> TotalCorrelation { get; set; }
+    public IEnumerable<double> User1Mediana { get; set; }
+    public IEnumerable<double> User2Mediana { get; set; }
+
+    public AnalysisForm()
     {
-        public AnalysisForm()
+        InitializeComponent();
+    }
+
+    private void button1_Click(object sender, EventArgs e)
+    {
+        Close();
+    }
+
+    private void AnalysisForm_Load(object sender, EventArgs e)
+    {
+        chart.Series[0].Points.Clear();
+
+        for (var i = 0; i < TotalCorrelation.Count; i++)
         {
-            InitializeComponent();
-        }
+            var correlationLabel = GetCorrelationLabel(i);
 
-        private void button1_Click(object sender, EventArgs e)
+            if (correlationLabel != null)
+                correlationLabel.Text = TotalCorrelation[i].ToString();
+
+            chart.Series[0].Points.AddXY("Question " + (i + 1), TotalCorrelation[i]);
+        }
+    }
+
+    private Label? GetCorrelationLabel(int index)
+    {
+        return index switch
         {
-            Close();
-        }
-
-        private void chart5_Click(object sender, EventArgs e)
-        {
-            var fds = new List<List<int>>
-            {
-                new() { 3, 4, 1, 2 }
-            };
-            chart.Series[0].Points.Clear();
-
-            for (var i = 0; i < fds.Count; i++)
-            {
-                var difference = CalculateDifference(fds[i]); // Функція для обчислення розбіжності між рангами питання
-                chart.Series[0].Points.AddXY("Question " + (i + 1), difference);
-            }
-
-        }
-
-        private static int CalculateDifference(IReadOnlyCollection<int> ranking)
-        {
-            var maxRank = ranking.Max();
-            var minRank = ranking.Min();
-
-            var difference = maxRank - minRank;
-
-            return difference;
-        }
+            0 => label3,
+            1 => label4,
+            2 => label12,
+            3 => label23,
+            4 => label25,
+            _ => null
+        };
     }
 }

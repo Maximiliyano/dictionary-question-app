@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms.DataVisualization.Charting;
 
-namespace DictionaryQuestionApp.Forms
+namespace DictionaryQuestionApp.Forms.AnalysisForm
 {
     partial class AnalysisForm
     {
@@ -69,14 +69,14 @@ namespace DictionaryQuestionApp.Forms
             label2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             label2.Location = new Point(337, 32);
             label2.Name = "label2";
-            label2.Size = new Size(155, 30);
+            label2.Size = new Size(192, 30);
             label2.TabIndex = 1;
-            label2.Text = "Result analysis";
+            label2.Text = "Результат аналізу";
             // 
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(12, 313);
+            label14.Location = new Point(12, 317);
             label14.Name = "label14";
             label14.Size = new Size(77, 15);
             label14.TabIndex = 15;
@@ -85,7 +85,7 @@ namespace DictionaryQuestionApp.Forms
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(12, 298);
+            label15.Location = new Point(12, 302);
             label15.Name = "label15";
             label15.Size = new Size(96, 15);
             label15.TabIndex = 14;
@@ -95,16 +95,16 @@ namespace DictionaryQuestionApp.Forms
             // 
             label16.AutoSize = true;
             label16.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label16.Location = new Point(12, 265);
+            label16.Location = new Point(12, 269);
             label16.Name = "label16";
-            label16.Size = new Size(67, 15);
+            label16.Size = new Size(66, 15);
             label16.TabIndex = 13;
-            label16.Text = "Question 3";
+            label16.Text = "Питання 3";
             // 
             // label17
             // 
             label17.AutoSize = true;
-            label17.Location = new Point(12, 413);
+            label17.Location = new Point(12, 417);
             label17.Name = "label17";
             label17.Size = new Size(77, 15);
             label17.TabIndex = 18;
@@ -113,7 +113,7 @@ namespace DictionaryQuestionApp.Forms
             // label18
             // 
             label18.AutoSize = true;
-            label18.Location = new Point(12, 398);
+            label18.Location = new Point(12, 402);
             label18.Name = "label18";
             label18.Size = new Size(96, 15);
             label18.TabIndex = 17;
@@ -123,16 +123,16 @@ namespace DictionaryQuestionApp.Forms
             // 
             label19.AutoSize = true;
             label19.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label19.Location = new Point(12, 365);
+            label19.Location = new Point(12, 369);
             label19.Name = "label19";
-            label19.Size = new Size(67, 15);
+            label19.Size = new Size(66, 15);
             label19.TabIndex = 16;
-            label19.Text = "Question 4";
+            label19.Text = "Питання 4";
             // 
             // label20
             // 
             label20.AutoSize = true;
-            label20.Location = new Point(12, 136);
+            label20.Location = new Point(12, 140);
             label20.Name = "label20";
             label20.Size = new Size(77, 15);
             label20.TabIndex = 21;
@@ -141,7 +141,7 @@ namespace DictionaryQuestionApp.Forms
             // label21
             // 
             label21.AutoSize = true;
-            label21.Location = new Point(12, 121);
+            label21.Location = new Point(12, 125);
             label21.Name = "label21";
             label21.Size = new Size(96, 15);
             label21.TabIndex = 20;
@@ -151,16 +151,16 @@ namespace DictionaryQuestionApp.Forms
             // 
             label22.AutoSize = true;
             label22.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label22.Location = new Point(12, 88);
+            label22.Location = new Point(12, 92);
             label22.Name = "label22";
-            label22.Size = new Size(67, 15);
+            label22.Size = new Size(66, 15);
             label22.TabIndex = 19;
-            label22.Text = "Question 1";
+            label22.Text = "Питання 1";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(12, 229);
+            label5.Location = new Point(12, 233);
             label5.Name = "label5";
             label5.Size = new Size(77, 15);
             label5.TabIndex = 27;
@@ -169,7 +169,7 @@ namespace DictionaryQuestionApp.Forms
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(12, 214);
+            label6.Location = new Point(12, 218);
             label6.Name = "label6";
             label6.Size = new Size(96, 15);
             label6.TabIndex = 26;
@@ -179,16 +179,16 @@ namespace DictionaryQuestionApp.Forms
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(12, 181);
+            label7.Location = new Point(12, 185);
             label7.Name = "label7";
-            label7.Size = new Size(67, 15);
+            label7.Size = new Size(66, 15);
             label7.TabIndex = 25;
-            label7.Text = "Question 2";
+            label7.Text = "Питання 2";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(12, 504);
+            label8.Location = new Point(12, 508);
             label8.Name = "label8";
             label8.Size = new Size(77, 15);
             label8.TabIndex = 24;
@@ -197,7 +197,7 @@ namespace DictionaryQuestionApp.Forms
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(12, 489);
+            label9.Location = new Point(12, 493);
             label9.Name = "label9";
             label9.Size = new Size(96, 15);
             label9.TabIndex = 23;
@@ -207,111 +207,111 @@ namespace DictionaryQuestionApp.Forms
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label10.Location = new Point(12, 456);
+            label10.Location = new Point(12, 460);
             label10.Name = "label10";
-            label10.Size = new Size(67, 15);
+            label10.Size = new Size(66, 15);
             label10.TabIndex = 22;
-            label10.Text = "Question 5";
+            label10.Text = "Питання 5";
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
-            label1.Location = new Point(134, 121);
+            label1.Location = new Point(134, 125);
             label1.Name = "label1";
-            label1.Size = new Size(31, 15);
+            label1.Size = new Size(27, 15);
             label1.TabIndex = 28;
-            label1.Text = "1234\r\n";
+            label1.Text = "null";
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
-            label3.Location = new Point(134, 136);
+            label3.Location = new Point(134, 140);
             label3.Name = "label3";
-            label3.Size = new Size(31, 15);
+            label3.Size = new Size(27, 15);
             label3.TabIndex = 29;
-            label3.Text = "1234\r\n";
+            label3.Text = "null";
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
-            label4.Location = new Point(134, 229);
+            label4.Location = new Point(134, 233);
             label4.Name = "label4";
-            label4.Size = new Size(31, 15);
+            label4.Size = new Size(27, 15);
             label4.TabIndex = 31;
-            label4.Text = "1234\r\n";
+            label4.Text = "null";
             // 
             // label11
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
-            label11.Location = new Point(134, 214);
+            label11.Location = new Point(134, 218);
             label11.Name = "label11";
-            label11.Size = new Size(31, 15);
+            label11.Size = new Size(27, 15);
             label11.TabIndex = 30;
-            label11.Text = "1234\r\n";
+            label11.Text = "null";
             // 
             // label12
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
-            label12.Location = new Point(134, 313);
+            label12.Location = new Point(134, 317);
             label12.Name = "label12";
-            label12.Size = new Size(31, 15);
+            label12.Size = new Size(27, 15);
             label12.TabIndex = 33;
-            label12.Text = "1234\r\n";
+            label12.Text = "null";
             // 
             // label13
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
-            label13.Location = new Point(134, 298);
+            label13.Location = new Point(134, 302);
             label13.Name = "label13";
-            label13.Size = new Size(31, 15);
+            label13.Size = new Size(27, 15);
             label13.TabIndex = 32;
-            label13.Text = "1234\r\n";
+            label13.Text = "null";
             // 
             // label23
             // 
             label23.AutoSize = true;
             label23.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
-            label23.Location = new Point(134, 413);
+            label23.Location = new Point(134, 417);
             label23.Name = "label23";
-            label23.Size = new Size(31, 15);
+            label23.Size = new Size(27, 15);
             label23.TabIndex = 35;
-            label23.Text = "1234\r\n";
+            label23.Text = "null";
             // 
             // label24
             // 
             label24.AutoSize = true;
             label24.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
-            label24.Location = new Point(134, 398);
+            label24.Location = new Point(134, 402);
             label24.Name = "label24";
-            label24.Size = new Size(31, 15);
+            label24.Size = new Size(27, 15);
             label24.TabIndex = 34;
-            label24.Text = "1234\r\n";
+            label24.Text = "null";
             // 
             // label25
             // 
             label25.AutoSize = true;
             label25.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
-            label25.Location = new Point(134, 504);
+            label25.Location = new Point(134, 508);
             label25.Name = "label25";
-            label25.Size = new Size(31, 15);
+            label25.Size = new Size(27, 15);
             label25.TabIndex = 37;
-            label25.Text = "1234\r\n";
+            label25.Text = "null";
             // 
             // label26
             // 
             label26.AutoSize = true;
             label26.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point);
-            label26.Location = new Point(134, 489);
+            label26.Location = new Point(134, 493);
             label26.Name = "label26";
-            label26.Size = new Size(31, 15);
+            label26.Size = new Size(27, 15);
             label26.TabIndex = 36;
-            label26.Text = "1234\r\n";
+            label26.Text = "null";
             // 
             // button1
             // 
@@ -370,6 +370,7 @@ namespace DictionaryQuestionApp.Forms
             Controls.Add(label2);
             Name = "AnalysisForm";
             Text = "AnalysisForm";
+            Load += AnalysisForm_Load;
             ((System.ComponentModel.ISupportInitialize)chart).EndInit();
             ResumeLayout(false);
             PerformLayout();

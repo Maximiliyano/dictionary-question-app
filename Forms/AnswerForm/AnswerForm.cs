@@ -11,12 +11,17 @@ public partial class AnswerForm : Form
     private readonly IList<User> _usersBlanks;
 
     private readonly IList<Question> _generalQuestions;
-    
+
+    private static IList<double> _totalCorrelation;
+    private static IEnumerable<double> _user1Mediana;
+    private static IEnumerable<double> _user2Mediana;
+
     public AnswerForm()
     {
         _usersBlanks = new List<User>();
         _generalQuestions = new List<Question>();
 
+        _totalCorrelation = new List<double>();
         Questions = new List<Question>();
 
         InitializeComponent();
@@ -40,7 +45,7 @@ public partial class AnswerForm : Form
                 answersLabelUser2.Text = ConvertToString(Questions[i].Id);
         }
     }
-    // TODO make desigh
+
     private Label? GetQuestionLabel(int index)
     {
         return index switch
@@ -143,10 +148,14 @@ public partial class AnswerForm : Form
         CalculateCorrelation(user1Rankings, user2Rankings);
         CalculateMedianScores(user1Rankings, user2Rankings);
         
-        var analysisForm = new AnalysisForm();
+        var analysisForm = new AnalysisForm.AnalysisForm();
 
         Hide();
 
+        analysisForm.TotalCorrelation = _totalCorrelation;
+        analysisForm.User1Mediana = _user1Mediana;
+        analysisForm.User2Mediana = _user2Mediana;
+        
         analysisForm.ShowDialog();
     }
     
@@ -161,6 +170,7 @@ public partial class AnswerForm : Form
             correlation = Math.Max(Math.Min(correlation, 1), -1);
             var roundedCorrelation = Math.Round(correlation, 2);
 
+            _totalCorrelation.Add(roundedCorrelation);
             MessageBox.Show($"Correlation for question {i + 1}: {roundedCorrelation}");
         }
     }
@@ -170,6 +180,8 @@ public partial class AnswerForm : Form
         var user1Medians = GetMedianScores(user1Rankings);
         var user2Medians = GetMedianScores(user2Rankings);
 
+        _user1Mediana = user1Medians;
+        _user2Mediana = user2Medians;
         MessageBox.Show("Median scores for User 1:\n" + string.Join("\n", user1Medians));
         MessageBox.Show("Median scores for User 2:\n" + string.Join("\n", user2Medians));
     }
