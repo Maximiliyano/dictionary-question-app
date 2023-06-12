@@ -1,4 +1,4 @@
-﻿namespace DictionaryQuestionApp.Forms;
+﻿namespace DictionaryQuestionApp.Forms.MainForm;
 
 partial class MainForm
 {

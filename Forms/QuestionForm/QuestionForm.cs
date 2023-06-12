@@ -1,12 +1,12 @@
 ﻿using DictionaryQuestionApp.Common.Libraries;
 using DictionaryQuestionApp.Common.Models;
 
-namespace DictionaryQuestionApp.Forms;
+namespace DictionaryQuestionApp.Forms.QuestionForm;
 
 public partial class QuestionForm : Form
 {
     public BlockObjective BlockObjective { get; set; }
-    
+
     private int _result;
 
     public QuestionForm()
@@ -89,7 +89,7 @@ public partial class QuestionForm : Form
     {
         Hide();
 
-        var answers = new AnswerForm();
+        var answers = new AnswerForm.AnswerForm();
 
         foreach (Control control in Controls)
         {
@@ -119,7 +119,7 @@ public partial class QuestionForm : Form
     private void Questions_Load(object sender, EventArgs e)
     {
         button1.Enabled = false;
-        
+
         var themeQuestions = QuestionsLibrary.ThemeSelectionQuestions(BlockObjective.Theme.Id);
 
         CheckBox[] checkboxes = {
@@ -134,7 +134,7 @@ public partial class QuestionForm : Form
 
         for (var i = 0; i < checkboxes.Length; i++)
         {
-            checkboxes[i].Text = string.Format(QuestionsLibrary.QuestionStringEndpointFormat, i+1, themeQuestions[i].Description);
+            checkboxes[i].Text = string.Format(QuestionsLibrary.QuestionStringEndpointFormat, i + 1, themeQuestions[i].Description);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace DictionaryQuestionApp.Forms;
+﻿namespace DictionaryQuestionApp.Forms.AboutForm;
 
 public partial class AboutForm : Form
 {
@@ -11,7 +11,7 @@ public partial class AboutForm : Form
     {
         Hide();
 
-        var mainForm = new MainForm();
+        var mainForm = new MainForm.MainForm();
 
         mainForm.Show();
     }

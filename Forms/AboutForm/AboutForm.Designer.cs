@@ -1,4 +1,4 @@
-﻿namespace DictionaryQuestionApp.Forms
+﻿namespace DictionaryQuestionApp.Forms.AboutForm
 {
     partial class AboutForm
     {

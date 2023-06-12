@@ -20,7 +20,6 @@ public abstract class AnswersLibrary
         };
 
         var answersList = dictionaryAnswers[questionId]
-            .OrderBy(answer => answer)
             .ToList();
 
         return answersList.Select((t, i) => BuildAnswer(i + 1, t)).ToList();

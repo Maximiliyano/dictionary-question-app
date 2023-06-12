@@ -1,4 +1,4 @@
-﻿namespace DictionaryQuestionApp.Forms;
+﻿namespace DictionaryQuestionApp.Forms.QuestionForm;
 
 partial class QuestionForm
 {
@@ -33,13 +33,13 @@ partial class QuestionForm
         // 
         label1.AutoSize = true;
         label1.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
-        label1.Location = new Point(175, 42);
+        label1.Location = new Point(209, 43);
         label1.Name = "label1";
         label1.Size = new Size(469, 19);
         label1.TabIndex = 0;
         label1.Text = "Оберіть, будь ласка, питання, на які вихочете отримати відповіді";
         // 
-        // checkBox1
+        // question1
         // 
         question1.AutoSize = true;
         question1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -51,7 +51,7 @@ partial class QuestionForm
         question1.UseVisualStyleBackColor = true;
         question1.CheckedChanged += Question1CheckedChanged;
         // 
-        // checkBox2
+        // question2
         // 
         question2.AutoSize = true;
         question2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -63,7 +63,7 @@ partial class QuestionForm
         question2.UseVisualStyleBackColor = true;
         question2.CheckedChanged += Question2CheckedChanged;
         // 
-        // checkBox3
+        // question3
         // 
         question3.AutoSize = true;
         question3.Location = new Point(33, 126);
@@ -74,7 +74,7 @@ partial class QuestionForm
         question3.UseVisualStyleBackColor = true;
         question3.CheckedChanged += Question3CheckedChanged;
         // 
-        // checkBox4
+        // question4
         // 
         question4.AutoSize = true;
         question4.Location = new Point(33, 151);
@@ -85,7 +85,7 @@ partial class QuestionForm
         question4.UseVisualStyleBackColor = true;
         question4.CheckedChanged += Question4CheckedChanged;
         // 
-        // checkBox5
+        // question5
         // 
         question5.AutoSize = true;
         question5.Location = new Point(33, 176);
@@ -96,7 +96,7 @@ partial class QuestionForm
         question5.UseVisualStyleBackColor = true;
         question5.CheckedChanged += Question5CheckedChanged;
         // 
-        // checkBox6
+        // question6
         // 
         question6.AutoSize = true;
         question6.Location = new Point(33, 201);
@@ -107,7 +107,7 @@ partial class QuestionForm
         question6.UseVisualStyleBackColor = true;
         question6.CheckedChanged += Question6CheckedChanged;
         // 
-        // checkBox7
+        // question7
         // 
         question7.AutoSize = true;
         question7.Location = new Point(33, 226);
@@ -120,7 +120,7 @@ partial class QuestionForm
         // 
         // button1
         // 
-        button1.Location = new Point(324, 287);
+        button1.Location = new Point(370, 287);
         button1.Name = "button1";
         button1.Size = new Size(162, 26);
         button1.TabIndex = 8;
@@ -141,7 +141,7 @@ partial class QuestionForm
         // 
         // QuestionForm
         // 
-        ClientSize = new Size(798, 325);
+        ClientSize = new Size(923, 325);
         Controls.Add(question1);
         Controls.Add(question2);
         Controls.Add(question3);

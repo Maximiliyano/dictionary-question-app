@@ -32,16 +32,6 @@ namespace DictionaryQuestionApp.Forms
         {
             ChartArea chartArea1 = new ChartArea();
             Series series1 = new Series();
-            ChartArea chartArea2 = new ChartArea();
-            Series series2 = new Series();
-            ChartArea chartArea3 = new ChartArea();
-            Series series3 = new Series();
-            ChartArea chartArea4 = new ChartArea();
-            Series series4 = new Series();
-            ChartArea chartArea5 = new ChartArea();
-            Series series5 = new Series();
-            ChartArea chartArea6 = new ChartArea();
-            Series series6 = new Series();
             label2 = new Label();
             label14 = new Label();
             label15 = new Label();
@@ -69,26 +59,15 @@ namespace DictionaryQuestionApp.Forms
             label25 = new Label();
             label26 = new Label();
             button1 = new Button();
-            label27 = new Label();
-            chart1 = new Chart();
-            chart2 = new Chart();
-            chart3 = new Chart();
-            chart4 = new Chart();
             chart = new Chart();
-            chart5 = new Chart();
-            ((System.ComponentModel.ISupportInitialize)chart1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)chart2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)chart3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)chart4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)chart).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)chart5).BeginInit();
             SuspendLayout();
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(228, 32);
+            label2.Location = new Point(337, 32);
             label2.Name = "label2";
             label2.Size = new Size(155, 30);
             label2.TabIndex = 1;
@@ -336,7 +315,7 @@ namespace DictionaryQuestionApp.Forms
             // 
             // button1
             // 
-            button1.Location = new Point(442, 580);
+            button1.Location = new Point(217, 572);
             button1.Name = "button1";
             button1.Size = new Size(379, 23);
             button1.TabIndex = 38;
@@ -344,102 +323,24 @@ namespace DictionaryQuestionApp.Forms
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // label27
-            // 
-            label27.AutoSize = true;
-            label27.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label27.ForeColor = SystemColors.Desktop;
-            label27.Location = new Point(887, 66);
-            label27.Name = "label27";
-            label27.Size = new Size(110, 21);
-            label27.TabIndex = 39;
-            label27.Text = "Total graphic\r\n";
-            // 
-            // chart1
-            // 
-            chartArea1.Name = "RankingDifferences";
-            chart1.ChartAreas.Add(chartArea1);
-            chart1.Location = new Point(210, 198);
-            chart1.Name = "chart1";
-            series1.ChartArea = "RankingDifferences";
-            series1.Name = "Series1";
-            chart1.Series.Add(series1);
-            chart1.Size = new Size(385, 63);
-            chart1.TabIndex = 42;
-            // 
-            // chart2
-            // 
-            chartArea2.Name = "RankingDifferences";
-            chart2.ChartAreas.Add(chartArea2);
-            chart2.Location = new Point(210, 282);
-            chart2.Name = "chart2";
-            series2.ChartArea = "RankingDifferences";
-            series2.Name = "Series1";
-            chart2.Series.Add(series2);
-            chart2.Size = new Size(385, 63);
-            chart2.TabIndex = 43;
-            // 
-            // chart3
-            // 
-            chartArea3.Name = "RankingDifferences";
-            chart3.ChartAreas.Add(chartArea3);
-            chart3.Location = new Point(210, 379);
-            chart3.Name = "chart3";
-            series3.ChartArea = "RankingDifferences";
-            series3.Name = "Series1";
-            chart3.Series.Add(series3);
-            chart3.Size = new Size(385, 63);
-            chart3.TabIndex = 44;
-            // 
-            // chart4
-            // 
-            chartArea4.Name = "RankingDifferences";
-            chart4.ChartAreas.Add(chartArea4);
-            chart4.Location = new Point(210, 471);
-            chart4.Name = "chart4";
-            series4.ChartArea = "RankingDifferences";
-            series4.Name = "Series1";
-            chart4.Series.Add(series4);
-            chart4.Size = new Size(385, 63);
-            chart4.TabIndex = 45;
-            // 
             // chart
             // 
-            chartArea5.Name = "RankingDifferences";
-            chart.ChartAreas.Add(chartArea5);
-            chart.Location = new Point(210, 102);
+            chartArea1.Name = "RankingDifferences";
+            chart.ChartAreas.Add(chartArea1);
+            chart.Location = new Point(228, 102);
             chart.Name = "chart";
-            series5.ChartArea = "RankingDifferences";
-            series5.Name = "Series1";
-            chart.Series.Add(series5);
-            chart.Size = new Size(385, 63);
+            series1.ChartArea = "RankingDifferences";
+            series1.Name = "Series1";
+            chart.Series.Add(series1);
+            chart.Size = new Size(611, 417);
             chart.TabIndex = 0;
-            // 
-            // chart5
-            // 
-            chartArea6.Name = "RankingDifferences";
-            chart5.ChartAreas.Add(chartArea6);
-            chart5.Location = new Point(670, 102);
-            chart5.Name = "chart5";
-            series6.ChartArea = "RankingDifferences";
-            series6.Name = "Series1";
-            chart5.Series.Add(series6);
-            chart5.Size = new Size(528, 432);
-            chart5.TabIndex = 46;
-            chart5.Click += chart5_Click;
             // 
             // AnalysisForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1228, 626);
-            Controls.Add(chart5);
-            Controls.Add(chart4);
-            Controls.Add(chart3);
-            Controls.Add(chart2);
-            Controls.Add(chart1);
+            ClientSize = new Size(870, 626);
             Controls.Add(chart);
-            Controls.Add(label27);
             Controls.Add(button1);
             Controls.Add(label25);
             Controls.Add(label26);
@@ -469,12 +370,7 @@ namespace DictionaryQuestionApp.Forms
             Controls.Add(label2);
             Name = "AnalysisForm";
             Text = "AnalysisForm";
-            ((System.ComponentModel.ISupportInitialize)chart1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)chart2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)chart3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)chart4).EndInit();
             ((System.ComponentModel.ISupportInitialize)chart).EndInit();
-            ((System.ComponentModel.ISupportInitialize)chart5).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -508,12 +404,6 @@ namespace DictionaryQuestionApp.Forms
         private Label label25;
         private Label label26;
         private Button button1;
-        private Label label27;
-        private Chart chart1;
-        private Chart chart2;
-        private Chart chart3;
-        private Chart chart4;
         private Chart chart;
-        private Chart chart5;
     }
 }

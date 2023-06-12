@@ -19,7 +19,7 @@
                 new() { 3, 4, 1, 2 }
             };
             chart.Series[0].Points.Clear();
-            
+
             for (var i = 0; i < fds.Count; i++)
             {
                 var difference = CalculateDifference(fds[i]); // Функція для обчислення розбіжності між рангами питання
@@ -27,7 +27,7 @@
             }
 
         }
-        
+
         private static int CalculateDifference(IReadOnlyCollection<int> ranking)
         {
             var maxRank = ranking.Max();

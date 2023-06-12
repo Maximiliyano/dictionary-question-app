@@ -1,7 +1,7 @@
 using DictionaryQuestionApp.Common.Libraries;
 using DictionaryQuestionApp.Common.Models;
 
-namespace DictionaryQuestionApp.Forms;
+namespace DictionaryQuestionApp.Forms.MainForm;
 
 public partial class MainForm : Form
 {
@@ -23,7 +23,7 @@ public partial class MainForm : Form
             return;
         }
 
-        var nextPageForm = new QuestionForm();
+        var nextPageForm = new QuestionForm.QuestionForm();
 
         Hide();
         
@@ -47,7 +47,7 @@ public partial class MainForm : Form
 
     private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
     {
-        var aboutForm = new AboutForm();
+        var aboutForm = new AboutForm.AboutForm();
 
         Hide();
 
