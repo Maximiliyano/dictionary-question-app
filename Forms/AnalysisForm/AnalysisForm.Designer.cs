@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms.DataVisualization.Charting;
+﻿using MathNet.Numerics;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace DictionaryQuestionApp.Forms.AnalysisForm
 {
@@ -20,7 +21,7 @@ namespace DictionaryQuestionApp.Forms.AnalysisForm
         private void InitializeComponent()
         {
             ChartArea chartArea1 = new ChartArea();
-            Series series1 = new Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             label2 = new Label();
             label14 = new Label();
             label15 = new Label();
@@ -49,18 +50,21 @@ namespace DictionaryQuestionApp.Forms.AnalysisForm
             label26 = new Label();
             button1 = new Button();
             chart = new Chart();
+            label27 = new Label();
             ((System.ComponentModel.ISupportInitialize)chart).BeginInit();
             SuspendLayout();
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Yu Gothic UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(276, 34);
+            label2.BackColor = Color.FromArgb(251, 248, 241);
+            label2.Font = new Font("Yu Gothic UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = SystemColors.ControlDarkDark;
+            label2.Location = new Point(424, 528);
             label2.Name = "label2";
-            label2.Size = new Size(221, 32);
+            label2.Size = new Size(254, 17);
             label2.TabIndex = 1;
-            label2.Text = "Результати аналізу";
+            label2.Text = "Коефіцієнт рангової кореляції Спірмена";
             // 
             // label14
             // 
@@ -68,9 +72,9 @@ namespace DictionaryQuestionApp.Forms.AnalysisForm
             label14.Font = new Font("Yu Gothic UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label14.Location = new Point(12, 317);
             label14.Name = "label14";
-            label14.Size = new Size(86, 17);
+            label14.Size = new Size(135, 17);
             label14.TabIndex = 15;
-            label14.Text = "Rank Spirmer";
+            label14.Text = "Коефіцієнт Спірмена";
             // 
             // label15
             // 
@@ -78,9 +82,9 @@ namespace DictionaryQuestionApp.Forms.AnalysisForm
             label15.Font = new Font("Yu Gothic UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label15.Location = new Point(12, 302);
             label15.Name = "label15";
-            label15.Size = new Size(106, 17);
+            label15.Size = new Size(104, 17);
             label15.TabIndex = 14;
-            label15.Text = "Mediana Kemeni";
+            label15.Text = "Медіана Кемеді";
             // 
             // label16
             // 
@@ -98,9 +102,9 @@ namespace DictionaryQuestionApp.Forms.AnalysisForm
             label17.Font = new Font("Yu Gothic UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label17.Location = new Point(12, 417);
             label17.Name = "label17";
-            label17.Size = new Size(86, 17);
+            label17.Size = new Size(135, 17);
             label17.TabIndex = 18;
-            label17.Text = "Rank Spirmer";
+            label17.Text = "Коефіцієнт Спірмена";
             // 
             // label18
             // 
@@ -108,9 +112,9 @@ namespace DictionaryQuestionApp.Forms.AnalysisForm
             label18.Font = new Font("Yu Gothic UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label18.Location = new Point(12, 402);
             label18.Name = "label18";
-            label18.Size = new Size(106, 17);
+            label18.Size = new Size(104, 17);
             label18.TabIndex = 17;
-            label18.Text = "Mediana Kemeni";
+            label18.Text = "Медіана Кемеді";
             // 
             // label19
             // 
@@ -128,9 +132,9 @@ namespace DictionaryQuestionApp.Forms.AnalysisForm
             label20.Font = new Font("Yu Gothic UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label20.Location = new Point(12, 140);
             label20.Name = "label20";
-            label20.Size = new Size(86, 17);
+            label20.Size = new Size(135, 17);
             label20.TabIndex = 21;
-            label20.Text = "Rank Spirmer";
+            label20.Text = "Коефіцієнт Спірмена";
             // 
             // label21
             // 
@@ -138,9 +142,9 @@ namespace DictionaryQuestionApp.Forms.AnalysisForm
             label21.Font = new Font("Yu Gothic UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label21.Location = new Point(12, 125);
             label21.Name = "label21";
-            label21.Size = new Size(106, 17);
+            label21.Size = new Size(104, 17);
             label21.TabIndex = 20;
-            label21.Text = "Mediana Kemeni";
+            label21.Text = "Медіана Кемеді";
             // 
             // label22
             // 
@@ -158,9 +162,9 @@ namespace DictionaryQuestionApp.Forms.AnalysisForm
             label5.Font = new Font("Yu Gothic UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label5.Location = new Point(12, 233);
             label5.Name = "label5";
-            label5.Size = new Size(86, 17);
+            label5.Size = new Size(135, 17);
             label5.TabIndex = 27;
-            label5.Text = "Rank Spirmer";
+            label5.Text = "Коефіцієнт Спірмена";
             // 
             // label6
             // 
@@ -168,9 +172,9 @@ namespace DictionaryQuestionApp.Forms.AnalysisForm
             label6.Font = new Font("Yu Gothic UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label6.Location = new Point(12, 218);
             label6.Name = "label6";
-            label6.Size = new Size(106, 17);
+            label6.Size = new Size(104, 17);
             label6.TabIndex = 26;
-            label6.Text = "Mediana Kemeni";
+            label6.Text = "Медіана Кемеді";
             // 
             // label7
             // 
@@ -188,9 +192,9 @@ namespace DictionaryQuestionApp.Forms.AnalysisForm
             label8.Font = new Font("Yu Gothic UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label8.Location = new Point(12, 508);
             label8.Name = "label8";
-            label8.Size = new Size(86, 17);
+            label8.Size = new Size(135, 17);
             label8.TabIndex = 24;
-            label8.Text = "Rank Spirmer";
+            label8.Text = "Коефіцієнт Спірмена";
             // 
             // label9
             // 
@@ -198,9 +202,9 @@ namespace DictionaryQuestionApp.Forms.AnalysisForm
             label9.Font = new Font("Yu Gothic UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label9.Location = new Point(12, 493);
             label9.Name = "label9";
-            label9.Size = new Size(106, 17);
+            label9.Size = new Size(104, 17);
             label9.TabIndex = 23;
-            label9.Text = "Mediana Kemeni";
+            label9.Text = "Медіана Кемеді";
             // 
             // label10
             // 
@@ -216,7 +220,7 @@ namespace DictionaryQuestionApp.Forms.AnalysisForm
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Yu Gothic UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(134, 125);
+            label1.Location = new Point(153, 125);
             label1.Name = "label1";
             label1.Size = new Size(28, 17);
             label1.TabIndex = 28;
@@ -226,7 +230,7 @@ namespace DictionaryQuestionApp.Forms.AnalysisForm
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Yu Gothic UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(134, 140);
+            label3.Location = new Point(153, 140);
             label3.Name = "label3";
             label3.Size = new Size(28, 17);
             label3.TabIndex = 29;
@@ -236,7 +240,7 @@ namespace DictionaryQuestionApp.Forms.AnalysisForm
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Yu Gothic UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(134, 233);
+            label4.Location = new Point(153, 233);
             label4.Name = "label4";
             label4.Size = new Size(28, 17);
             label4.TabIndex = 31;
@@ -246,7 +250,7 @@ namespace DictionaryQuestionApp.Forms.AnalysisForm
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Yu Gothic UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label11.Location = new Point(134, 218);
+            label11.Location = new Point(153, 218);
             label11.Name = "label11";
             label11.Size = new Size(28, 17);
             label11.TabIndex = 30;
@@ -256,7 +260,7 @@ namespace DictionaryQuestionApp.Forms.AnalysisForm
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Yu Gothic UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label12.Location = new Point(134, 317);
+            label12.Location = new Point(153, 317);
             label12.Name = "label12";
             label12.Size = new Size(28, 17);
             label12.TabIndex = 33;
@@ -266,7 +270,7 @@ namespace DictionaryQuestionApp.Forms.AnalysisForm
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Yu Gothic UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label13.Location = new Point(134, 302);
+            label13.Location = new Point(153, 302);
             label13.Name = "label13";
             label13.Size = new Size(28, 17);
             label13.TabIndex = 32;
@@ -276,7 +280,7 @@ namespace DictionaryQuestionApp.Forms.AnalysisForm
             // 
             label23.AutoSize = true;
             label23.Font = new Font("Yu Gothic UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label23.Location = new Point(134, 417);
+            label23.Location = new Point(153, 417);
             label23.Name = "label23";
             label23.Size = new Size(28, 17);
             label23.TabIndex = 35;
@@ -286,7 +290,7 @@ namespace DictionaryQuestionApp.Forms.AnalysisForm
             // 
             label24.AutoSize = true;
             label24.Font = new Font("Yu Gothic UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label24.Location = new Point(134, 402);
+            label24.Location = new Point(153, 402);
             label24.Name = "label24";
             label24.Size = new Size(28, 17);
             label24.TabIndex = 34;
@@ -296,7 +300,7 @@ namespace DictionaryQuestionApp.Forms.AnalysisForm
             // 
             label25.AutoSize = true;
             label25.Font = new Font("Yu Gothic UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label25.Location = new Point(134, 508);
+            label25.Location = new Point(153, 508);
             label25.Name = "label25";
             label25.Size = new Size(28, 17);
             label25.TabIndex = 37;
@@ -306,7 +310,7 @@ namespace DictionaryQuestionApp.Forms.AnalysisForm
             // 
             label26.AutoSize = true;
             label26.Font = new Font("Yu Gothic UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label26.Location = new Point(134, 493);
+            label26.Location = new Point(153, 493);
             label26.Name = "label26";
             label26.Size = new Size(28, 17);
             label26.TabIndex = 36;
@@ -318,25 +322,41 @@ namespace DictionaryQuestionApp.Forms.AnalysisForm
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Yu Gothic UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(228, 567);
+            button1.Location = new Point(210, 574);
             button1.Name = "button1";
             button1.Size = new Size(379, 30);
             button1.TabIndex = 38;
-            button1.Text = "Close";
+            button1.Text = "Закрити";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // chart
             // 
+            chartArea1.AxisY.Interval = 0.1D;
+            chartArea1.AxisY.Maximum = 1D;
+            chartArea1.AxisY.Minimum = -1D;
             chartArea1.Name = "RankingDifferences";
             chart.ChartAreas.Add(chartArea1);
             chart.Location = new Point(228, 92);
             chart.Name = "chart";
+            series1.BorderWidth = 2;
             series1.ChartArea = "RankingDifferences";
+            series1.ChartType = SeriesChartType.Line;
+            series1.Color = Color.Blue;
             series1.Name = "Series1";
             chart.Series.Add(series1);
             chart.Size = new Size(602, 433);
             chart.TabIndex = 0;
+            // 
+            // label27
+            // 
+            label27.AutoSize = true;
+            label27.Font = new Font("Yu Gothic UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            label27.Location = new Point(291, 34);
+            label27.Name = "label27";
+            label27.Size = new Size(221, 32);
+            label27.TabIndex = 39;
+            label27.Text = "Результати аналізу";
             // 
             // AnalysisForm
             // 
@@ -344,6 +364,7 @@ namespace DictionaryQuestionApp.Forms.AnalysisForm
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(251, 248, 241);
             ClientSize = new Size(870, 626);
+            Controls.Add(label27);
             Controls.Add(chart);
             Controls.Add(button1);
             Controls.Add(label25);
@@ -410,5 +431,6 @@ namespace DictionaryQuestionApp.Forms.AnalysisForm
         private Label label26;
         private Button button1;
         private Chart chart;
+        private Label label27;
     }
 }

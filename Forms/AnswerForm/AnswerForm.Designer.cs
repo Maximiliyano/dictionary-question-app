@@ -174,7 +174,7 @@ partial class AnswerForm
         analysisButton.FlatAppearance.BorderSize = 0;
         analysisButton.FlatStyle = FlatStyle.Flat;
         analysisButton.Font = new Font("Yu Gothic UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-        analysisButton.Location = new Point(675, 840);
+        analysisButton.Location = new Point(678, 877);
         analysisButton.Name = "analysisButton";
         analysisButton.Size = new Size(199, 29);
         analysisButton.TabIndex = 44;
@@ -228,9 +228,9 @@ partial class AnswerForm
         user1.Font = new Font("Yu Gothic UI", 9F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
         user1.Location = new Point(25, 76);
         user1.Name = "user1";
-        user1.Size = new Size(80, 15);
+        user1.Size = new Size(58, 15);
         user1.TabIndex = 49;
-        user1.Text = "Користувач 1";
+        user1.Text = "Експерт 1";
         // 
         // user2
         // 
@@ -238,9 +238,9 @@ partial class AnswerForm
         user2.Font = new Font("Yu Gothic UI", 9F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
         user2.Location = new Point(455, 76);
         user2.Name = "user2";
-        user2.Size = new Size(82, 15);
+        user2.Size = new Size(60, 15);
         user2.TabIndex = 50;
-        user2.Text = "Користувач 2";
+        user2.Text = "Експерт 2";
         // 
         // label15
         // 
@@ -347,7 +347,7 @@ partial class AnswerForm
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         BackColor = Color.FromArgb(251, 248, 241);
-        ClientSize = new Size(906, 893);
+        ClientSize = new Size(906, 918);
         Controls.Add(label15);
         Controls.Add(label16);
         Controls.Add(label17);

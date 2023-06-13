@@ -82,6 +82,9 @@ public partial class QuestionForm : Form
                 break;
         }
 
+        if (_result < 5)
+            button1.Enabled = false;
+
         countAnswers.Text = $@"{_result}/5";
     }
 

@@ -5,8 +5,8 @@ namespace DictionaryQuestionApp.Forms.AnalysisForm;
 public partial class AnalysisForm : Form
 {
     public IList<double> TotalCorrelation { get; set; }
-    public IEnumerable<double> User1Median { get; set; }
-    public IEnumerable<double> User2Median { get; set; }
+    public IList<double> User1Median { get; set; }
+    public IList<double> User2Median { get; set; }
 
     public AnalysisForm()
     {
@@ -29,13 +29,31 @@ public partial class AnalysisForm : Form
             if (correlationLabel != null)
                 correlationLabel.Text = TotalCorrelation[i].ToString(CultureInfo.InvariantCulture);
 
-            chart.Series[0].Points.AddXY("Question " + (i + 1), TotalCorrelation[i]);
+            chart.Series[0].Points.AddXY("Питання " + (i + 1), TotalCorrelation[i]);
+        }
+
+        for (var i = 0; i < User1Median.Count; i++)
+        {
+            var medianLabel = GetMedianLabel(i);
+
+            if (medianLabel != null)
+                medianLabel.Text = ((User1Median[i] + User2Median[i]) / 2.0).ToString();
         }
     }
 
-    private Label? GetCorrelationLabel(int index)
-    {
-        return index switch
+    private Label? GetMedianLabel(int index) =>
+        index switch
+        {
+            0 => label1,
+            1 => label11,
+            2 => label13,
+            3 => label24,
+            4 => label26,
+            _ => null
+        };
+
+    private Label? GetCorrelationLabel(int index) =>
+        index switch
         {
             0 => label3,
             1 => label4,
@@ -44,5 +62,4 @@ public partial class AnalysisForm : Form
             4 => label25,
             _ => null
         };
-    }
 }

@@ -13,8 +13,8 @@ public partial class AnswerForm : Form
     private readonly IList<Question> _generalQuestions;
 
     private static IList<double> _totalCorrelation;
-    private static IEnumerable<double> _user1Mediana;
-    private static IEnumerable<double> _user2Mediana;
+    private static IList<double> _user1Mediana;
+    private static IList<double> _user2Mediana;
 
     public AnswerForm()
     {
@@ -168,9 +168,16 @@ public partial class AnswerForm : Form
 
             var correlation = Correlation.Pearson(user1Scores, user2Scores);
             correlation = Math.Max(Math.Min(correlation, 1), -1);
-            var roundedCorrelation = Math.Round(correlation, 2);
 
-            _totalCorrelation.Add(roundedCorrelation);
+            if (!double.IsNaN(correlation))
+            {
+                var roundedCorrelation = Math.Round(correlation, 2);
+                _totalCorrelation.Add(roundedCorrelation);
+            }
+            else
+            {
+                _totalCorrelation.Add(1);
+            }
         }
     }
 
@@ -179,8 +186,8 @@ public partial class AnswerForm : Form
         var user1Medians = GetMedianScores(user1Rankings);
         var user2Medians = GetMedianScores(user2Rankings);
 
-        _user1Mediana = user1Medians;
-        _user2Mediana = user2Medians;
+        _user1Mediana = user1Medians.ToList();
+        _user2Mediana = user2Medians.ToList();
     }
 
     private static IEnumerable<double> GetColumn(IReadOnlyList<List<int>> array, int columnIndex)

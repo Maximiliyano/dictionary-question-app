@@ -54,13 +54,13 @@ partial class MainForm
         // themes
         // 
         themes.BackColor = Color.FromArgb(247, 236, 222);
-        themes.Font = new Font("Bahnschrift", 9F, FontStyle.Regular, GraphicsUnit.Pixel);
+        themes.Font = new Font("Yu Gothic UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
         themes.ForeColor = SystemColors.WindowText;
         themes.FormattingEnabled = true;
         themes.Location = new Point(98, 169);
         themes.Margin = new Padding(4, 3, 4, 3);
         themes.Name = "themes";
-        themes.Size = new Size(352, 19);
+        themes.Size = new Size(352, 25);
         themes.TabIndex = 3;
         // 
         // menuStrip1
