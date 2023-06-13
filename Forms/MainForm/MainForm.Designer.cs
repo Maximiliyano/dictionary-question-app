@@ -29,34 +29,38 @@ partial class MainForm
         // label1
         // 
         label1.AutoSize = true;
-        label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-        label1.Location = new Point(206, 60);
+        label1.Font = new Font("Yu Gothic UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
+        label1.Location = new Point(169, 57);
         label1.Margin = new Padding(4, 0, 4, 0);
         label1.Name = "label1";
-        label1.Size = new Size(139, 30);
+        label1.Size = new Size(206, 45);
         label1.TabIndex = 0;
         label1.Text = "Вітаємо Вас!";
         // 
         // button1
         // 
-        button1.Location = new Point(228, 182);
+        button1.BackColor = Color.FromArgb(236, 205, 180);
+        button1.FlatAppearance.BorderSize = 0;
+        button1.FlatStyle = FlatStyle.Popup;
+        button1.Location = new Point(228, 211);
         button1.Margin = new Padding(4, 3, 4, 3);
         button1.Name = "button1";
         button1.Size = new Size(88, 28);
         button1.TabIndex = 2;
         button1.Text = "Вибрати";
-        button1.UseVisualStyleBackColor = true;
+        button1.UseVisualStyleBackColor = false;
         button1.Click += button1_Click;
         // 
         // themes
         // 
-        themes.BackColor = Color.White;
+        themes.BackColor = Color.FromArgb(247, 236, 222);
+        themes.Font = new Font("Bahnschrift", 9F, FontStyle.Regular, GraphicsUnit.Pixel);
         themes.ForeColor = SystemColors.WindowText;
         themes.FormattingEnabled = true;
-        themes.Location = new Point(98, 140);
+        themes.Location = new Point(98, 169);
         themes.Margin = new Padding(4, 3, 4, 3);
         themes.Name = "themes";
-        themes.Size = new Size(352, 22);
+        themes.Size = new Size(352, 19);
         themes.TabIndex = 3;
         // 
         // menuStrip1
@@ -78,20 +82,21 @@ partial class MainForm
         // label2
         // 
         label2.AutoSize = true;
-        label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-        label2.Location = new Point(60, 99);
+        label2.Font = new Font("Yu Gothic UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+        label2.Location = new Point(138, 115);
         label2.Margin = new Padding(4, 0, 4, 0);
         label2.Name = "label2";
-        label2.Size = new Size(447, 21);
+        label2.Size = new Size(274, 40);
         label2.TabIndex = 6;
-        label2.Text = "Оберіть, будь ласка, тему опитування з випадаючого списка:";
+        label2.Text = "Оберіть, будь ласка, тему опитування \r\nз випадаючого списка:";
+        label2.TextAlign = ContentAlignment.TopCenter;
         // 
         // MainForm
         // 
         AutoScaleDimensions = new SizeF(7F, 14F);
         AutoScaleMode = AutoScaleMode.Font;
-        BackColor = Color.White;
-        ClientSize = new Size(565, 242);
+        BackColor = Color.FromArgb(251, 248, 241);
+        ClientSize = new Size(565, 264);
         Controls.Add(label2);
         Controls.Add(menuStrip1);
         Controls.Add(themes);

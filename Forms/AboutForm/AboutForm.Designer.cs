@@ -31,10 +31,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(66, 50);
+            label1.Font = new Font("Yu Gothic UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(26, 43);
             label1.Name = "label1";
-            label1.Size = new Size(498, 20);
+            label1.Size = new Size(607, 25);
             label1.TabIndex = 0;
             label1.Text = "Раді вітати Вас в програмі “Визначення розбіжностей ранжувань”!";
             label1.TextAlign = ContentAlignment.TopCenter;
@@ -42,8 +42,8 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(31, 91);
+            label2.Font = new Font("Yu Gothic UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(54, 87);
             label2.Name = "label2";
             label2.RightToLeft = RightToLeft.No;
             label2.Size = new Size(533, 126);
@@ -53,14 +53,18 @@
             // 
             // button1
             // 
-            button1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(229, 248);
+            button1.BackColor = Color.FromArgb(236, 205, 180);
+            button1.FlatAppearance.BorderColor = Color.White;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Yu Gothic UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.Location = new Point(231, 235);
             button1.Name = "button1";
-            button1.Size = new Size(154, 24);
+            button1.Size = new Size(176, 30);
             button1.TabIndex = 2;
             button1.Text = "Розпочати роботу";
             button1.TextAlign = ContentAlignment.BottomCenter;
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // aboutToolStripMenuItem
@@ -73,7 +77,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(600, 299);
+            BackColor = Color.FromArgb(251, 248, 241);
+            ClientSize = new Size(656, 300);
             Controls.Add(button1);
             Controls.Add(label2);
             Controls.Add(label1);

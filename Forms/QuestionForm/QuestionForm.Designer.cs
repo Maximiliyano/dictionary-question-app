@@ -32,17 +32,17 @@ partial class QuestionForm
         // label1
         // 
         label1.AutoSize = true;
-        label1.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
-        label1.Location = new Point(209, 43);
+        label1.Font = new Font("Yu Gothic UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+        label1.Location = new Point(200, 41);
         label1.Name = "label1";
-        label1.Size = new Size(469, 19);
+        label1.Size = new Size(499, 21);
         label1.TabIndex = 0;
         label1.Text = "Оберіть, будь ласка, питання, на які вихочете отримати відповіді";
         // 
         // question1
         // 
         question1.AutoSize = true;
-        question1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+        question1.Font = new Font("Yu Gothic UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
         question1.Location = new Point(33, 76);
         question1.Name = "question1";
         question1.Size = new Size(82, 19);
@@ -54,7 +54,7 @@ partial class QuestionForm
         // question2
         // 
         question2.AutoSize = true;
-        question2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+        question2.Font = new Font("Yu Gothic UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
         question2.Location = new Point(33, 101);
         question2.Name = "question2";
         question2.Size = new Size(82, 19);
@@ -66,6 +66,7 @@ partial class QuestionForm
         // question3
         // 
         question3.AutoSize = true;
+        question3.Font = new Font("Yu Gothic UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
         question3.Location = new Point(33, 126);
         question3.Name = "question3";
         question3.Size = new Size(82, 19);
@@ -77,6 +78,7 @@ partial class QuestionForm
         // question4
         // 
         question4.AutoSize = true;
+        question4.Font = new Font("Yu Gothic UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
         question4.Location = new Point(33, 151);
         question4.Name = "question4";
         question4.Size = new Size(82, 19);
@@ -88,6 +90,7 @@ partial class QuestionForm
         // question5
         // 
         question5.AutoSize = true;
+        question5.Font = new Font("Yu Gothic UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
         question5.Location = new Point(33, 176);
         question5.Name = "question5";
         question5.Size = new Size(82, 19);
@@ -99,6 +102,7 @@ partial class QuestionForm
         // question6
         // 
         question6.AutoSize = true;
+        question6.Font = new Font("Yu Gothic UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
         question6.Location = new Point(33, 201);
         question6.Name = "question6";
         question6.Size = new Size(82, 19);
@@ -110,6 +114,7 @@ partial class QuestionForm
         // question7
         // 
         question7.AutoSize = true;
+        question7.Font = new Font("Yu Gothic UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
         question7.Location = new Point(33, 226);
         question7.Name = "question7";
         question7.Size = new Size(82, 19);
@@ -120,18 +125,23 @@ partial class QuestionForm
         // 
         // button1
         // 
+        button1.BackColor = Color.FromArgb(236, 205, 180);
+        button1.FlatAppearance.BorderSize = 0;
+        button1.FlatStyle = FlatStyle.Flat;
+        button1.Font = new Font("Yu Gothic UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
         button1.Location = new Point(370, 287);
         button1.Name = "button1";
         button1.Size = new Size(162, 26);
         button1.TabIndex = 8;
         button1.Text = "Отримати відповіді";
-        button1.UseVisualStyleBackColor = true;
+        button1.UseVisualStyleBackColor = false;
         button1.Click += button1_Click;
         // 
         // countAnswers
         // 
         countAnswers.AutoSize = true;
         countAnswers.BackColor = SystemColors.Control;
+        countAnswers.FlatStyle = FlatStyle.Popup;
         countAnswers.ForeColor = SystemColors.ControlDarkDark;
         countAnswers.Location = new Point(34, 271);
         countAnswers.Name = "countAnswers";
@@ -141,6 +151,7 @@ partial class QuestionForm
         // 
         // QuestionForm
         // 
+        BackColor = Color.FromArgb(251, 248, 241);
         ClientSize = new Size(923, 325);
         Controls.Add(question1);
         Controls.Add(question2);

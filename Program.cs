@@ -1,4 +1,3 @@
-using DictionaryQuestionApp.Forms;
 using DictionaryQuestionApp.Forms.AboutForm;
 
 namespace DictionaryQuestionApp;

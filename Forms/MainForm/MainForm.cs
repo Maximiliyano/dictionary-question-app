@@ -7,11 +7,11 @@ public partial class MainForm : Form
 {
 
     private readonly IList<string> _themesCollection;
-    
+
     public MainForm()
     {
         InitializeComponent();
-        
+
         _themesCollection = ThemeLibrary.SelectionAllTheme();
     }
 
@@ -26,14 +26,14 @@ public partial class MainForm : Form
         var nextPageForm = new QuestionForm.QuestionForm();
 
         Hide();
-        
+
         nextPageForm.BlockObjective = new BlockObjective
         {
             Theme = new Theme
             {
                 Id = themes.SelectedIndex,
                 Title = _themesCollection[themes.SelectedIndex]
-            }, 
+            },
             Questions = QuestionsLibrary.ThemeSelectionQuestions(themes.SelectedIndex)
         };
 

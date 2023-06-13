@@ -134,31 +134,31 @@ public partial class AnswerForm : Form
         {
             generalRankings.AddRange(
                 user.Questions
-                    .Select(question => 
+                    .Select(question =>
                         question.Answers
                             .Select(answer => answer.Rank)
                             .ToList()));
         }
-        
+
         #endregion
 
         var user1Rankings = generalRankings.Take(5).ToList();
         var user2Rankings = generalRankings.Skip(generalRankings.Count - 5).ToList();
-        
+
         CalculateCorrelation(user1Rankings, user2Rankings);
         CalculateMedianScores(user1Rankings, user2Rankings);
-        
+
         var analysisForm = new AnalysisForm.AnalysisForm();
 
         Hide();
 
         analysisForm.TotalCorrelation = _totalCorrelation;
-        analysisForm.User1Mediana = _user1Mediana;
-        analysisForm.User2Mediana = _user2Mediana;
-        
+        analysisForm.User1Median = _user1Mediana;
+        analysisForm.User2Median = _user2Mediana;
+
         analysisForm.ShowDialog();
     }
-    
+
     private static void CalculateCorrelation(IReadOnlyList<List<int>> user1Rankings, IReadOnlyList<List<int>> user2Rankings)
     {
         for (var i = 0; i < user1Rankings.Count; i++)
@@ -171,7 +171,6 @@ public partial class AnswerForm : Form
             var roundedCorrelation = Math.Round(correlation, 2);
 
             _totalCorrelation.Add(roundedCorrelation);
-            MessageBox.Show($"Correlation for question {i + 1}: {roundedCorrelation}");
         }
     }
 
@@ -182,8 +181,6 @@ public partial class AnswerForm : Form
 
         _user1Mediana = user1Medians;
         _user2Mediana = user2Medians;
-        MessageBox.Show("Median scores for User 1:\n" + string.Join("\n", user1Medians));
-        MessageBox.Show("Median scores for User 2:\n" + string.Join("\n", user2Medians));
     }
 
     private static IEnumerable<double> GetColumn(IReadOnlyList<List<int>> array, int columnIndex)

@@ -1,10 +1,12 @@
-﻿namespace DictionaryQuestionApp.Forms.AnalysisForm;
+﻿using System.Globalization;
+
+namespace DictionaryQuestionApp.Forms.AnalysisForm;
 
 public partial class AnalysisForm : Form
 {
     public IList<double> TotalCorrelation { get; set; }
-    public IEnumerable<double> User1Mediana { get; set; }
-    public IEnumerable<double> User2Mediana { get; set; }
+    public IEnumerable<double> User1Median { get; set; }
+    public IEnumerable<double> User2Median { get; set; }
 
     public AnalysisForm()
     {
@@ -25,7 +27,7 @@ public partial class AnalysisForm : Form
             var correlationLabel = GetCorrelationLabel(i);
 
             if (correlationLabel != null)
-                correlationLabel.Text = TotalCorrelation[i].ToString();
+                correlationLabel.Text = TotalCorrelation[i].ToString(CultureInfo.InvariantCulture);
 
             chart.Series[0].Points.AddXY("Question " + (i + 1), TotalCorrelation[i]);
         }
