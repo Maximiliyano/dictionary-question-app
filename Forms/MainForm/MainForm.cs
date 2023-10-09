@@ -27,15 +27,9 @@ public partial class MainForm : Form
 
         Hide();
 
-        nextPageForm.BlockObjective = new BlockObjective
-        {
-            Theme = new Theme
-            {
-                Id = themes.SelectedIndex,
-                Title = _themesCollection[themes.SelectedIndex]
-            },
-            Questions = QuestionsLibrary.ThemeSelectionQuestions(themes.SelectedIndex)
-        };
+        nextPageForm.BlockObjective = BuildBlockObjectiveModel(
+            BuildThemeModel(themes.SelectedIndex, _themesCollection[themes.SelectedIndex]),
+            QuestionsLibrary.ThemeSelectionQuestions(themes.SelectedIndex));
 
         nextPageForm.Show();
     }
@@ -53,4 +47,18 @@ public partial class MainForm : Form
 
         aboutForm.ShowDialog();
     }
+
+    private static BlockObjective BuildBlockObjectiveModel(Theme themeModel, IList<Question> questions) =>
+        new()
+        {
+            Theme = themeModel,
+            Questions = questions
+        };
+
+    private static Theme BuildThemeModel(int themeId, string title) =>
+        new()
+        {
+            Id = themeId,
+            Title = title
+        };
 }

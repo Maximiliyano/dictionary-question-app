@@ -98,11 +98,10 @@ public partial class QuestionForm : Form
         {
             if (control is CheckBox { Checked: true } checkBox)
             {
-                answers.Questions.Add(new Question
-                {
-                    Id = checkBox.TabIndex,
-                    Description = checkBox.Text.Remove(0, 3)
-                });
+                answers.Questions.Add(
+                    BuildQuestionModel(
+                        checkBox.TabIndex,
+                        checkBox.Text.Remove(0, 3)));
             }
         }
 
@@ -140,4 +139,11 @@ public partial class QuestionForm : Form
             checkboxes[i].Text = string.Format(QuestionsLibrary.QuestionStringEndpointFormat, i + 1, themeQuestions[i].Description);
         }
     }
+
+    private static Question BuildQuestionModel(int questionId, string description) =>
+        new()
+        {
+            Id = questionId,
+            Description = description
+        };
 }
